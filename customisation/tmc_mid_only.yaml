@@ -1,0 +1,14 @@
+mid-cbf:
+  enabled: false
+mid-csp:
+  enabled: false
+sdp:
+  enabled: false
+oet-scripts:
+  enabled: false
+webjive:
+  enabled: false
+skuid:
+  enabled: false
+ska-archiver:
+  enabled: false
