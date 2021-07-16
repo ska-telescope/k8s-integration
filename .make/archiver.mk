@@ -35,7 +35,7 @@ configure-archiver:  get-service ##configure attributes to archive
 		kubectl run $(CONFIGURE_ARCHIVER) \
 		--namespace $(KUBE_NAMESPACE) -i --wait --restart=Never \
 		--image-pull-policy=IfNotPresent \
-		--image="artefact.skao.int/ska-tango-images-tango-dsconfig:1.5.1" -- \
+		--image="nexus.engageska-portugal.pt/ska-docker/tango-dsconfig:1.5.0.3" -- \
 		/bin/bash -c "sudo tar xv && \
 		sudo curl --retry 4 --retry-delay 1 https://gitlab.com/ska-telescope/ska-archiver/-/raw/master/charts/ska-archiver/data/configure_hdbpp.py -o /resources/archiver/configure_hdbpp.py && \
 		cd /resources/archiver && \
