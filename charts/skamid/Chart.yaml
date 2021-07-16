@@ -44,10 +44,10 @@ dependencies:
   version: 0.1.0
   repository: file://../landingpage
   condition: landingpage.enabled
-#- name: ska-archiver
-#  version: 0.1.8
-#  repository: https://artefact.skao.int/repository/helm-internal
-#  condition: ska-archiver.enabled
+- name: ska-archiver
+  version: 0.1.8
+  repository: https://artefact.skao.int/repository/helm-internal
+  condition: ska-archiver.enabled
 ## DISH LMC Prototype was disabled in the old version of skampi
 # - name: dsh-lmc-prototype
 #   version: 0.0.1
