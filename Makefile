@@ -12,7 +12,6 @@ TANGO_DATABASE_DS ?= databaseds-tango-base-$(DOMAIN_TAG)## Stable name for the T
 USE_NGINX ?= true##Traefik or Nginx
 HELM_RELEASE ?= test## release name of the chart
 DEPLOYMENT_CONFIGURATION ?= skamid## umbrella chart to work with
-HELM_HOST ?= $(CAR_HELM_REPOSITORY_URL)## helm host url https
 MINIKUBE ?= true## Minikube or not
 UMBRELLA_CHART_PATH ?= ./charts/$(DEPLOYMENT_CONFIGURATION)/##Path of the umbrella chart to install
 
@@ -155,7 +154,7 @@ upgrade-chart: ## upgrade the helm chart on the namespace KUBE_NAMESPACE
 		test "$(SKIP_HELM_DEPENDENCY_UPDATE)" == "1" || helm dependency update $(UMBRELLA_CHART_PATH); \
 	else \
 		echo "Deploying from artefact repository..."; \
-		helm repo add $(HELM_REPO_NAME) $(HELM_HOST); \
+		helm repo add $(HELM_REPO_NAME) $(CAR_HELM_REPOSITORY_URL); \
 		helm search repo $(HELM_REPO_NAME) | grep DESCRIPTION; \
 		helm search repo $(HELM_REPO_NAME) | grep $(UMBRELLA_CHART_PATH); \
 	fi

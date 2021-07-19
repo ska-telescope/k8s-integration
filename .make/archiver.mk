@@ -1,6 +1,5 @@
 .PHONY: check-archiver-dbname get-service configure-archiver archiver_k8s_test download
 
-HELM_HOST ?= $(CAR_HELM_REPOSITORY_URL)## helm host url https
 CONFIGURE_ARCHIVER = test-configure-archiver # Test runner - run to completion the configuration job in K8s
 ARCHIVER_DBNAME ?= default_mvp_archiver_db # Deafult database name used if not provided by user while deploying the archiver
 ARCHIVER_CONFIG_FILE ?= $(DEPLOYMENT_CONFIGURATION)/configuration.json## archiver attribute configure json file for MVP-mid to work with
