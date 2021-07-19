@@ -66,7 +66,7 @@ webjive:
         cpu: 1000m # 1000m = 1 CPU
         memory: 1024Mi # 1024Mi = 1 GB mem
 
-oet-scripts.enabled:
+ska-oso-scripting.enabled:
   enabled: true
   ingress:
     hostname: k8s.stfc.skao.int
